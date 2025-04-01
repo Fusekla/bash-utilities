@@ -4,7 +4,7 @@
 WORK_DIR=$(pwd)
 LOG_DIR=$(pwd)
 LOG_FILE=$(date +%Y%m%d-%H%M_var-cleanup.log)
-TARGET_DIR=/home/miro-dev/the-plan/week1/sample-dir
+TARGET_DIR=/var/log
 RETENTION=$1
 
 # FLOW
