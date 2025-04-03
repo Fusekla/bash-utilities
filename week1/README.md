@@ -9,9 +9,13 @@ This folder contains script [var-cleanup.sh](./var-cleanup.sh) that deletes file
 ./var-cleanup.sh [-h] [-r <days>] [-d] [-p <path>] [-e]
 ```
 -h → Print help message
+
 -r <days> → Set retention period (default: 7 days)
+
 -d → Dry run (no files will be deleted)
+
 -p <path> → Target directory for cleanup (default: /var/log)
+
 -e → Exclude subdirectories (-maxdepth 1)
 
 ## Examples
