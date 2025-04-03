@@ -25,7 +25,7 @@ This folder contains script [var-cleanup.sh](./var-cleanup.sh) that deletes file
     ```
 2. Delete files older than 31 days in default `/var/log` directory
     ```bash
-    var-cleanup.sh -r 7
+    var-cleanup.sh -r 31
     ```
 3. Delete files older than 3 days in custom `/var/log/tmp` directory, exclude all subdirectories
     ```bash
