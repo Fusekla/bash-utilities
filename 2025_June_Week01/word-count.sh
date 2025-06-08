@@ -12,7 +12,7 @@ TARGET_FILE=""
 mkdir -p "$LOG_DIR"
 
 # Load helper scripts
-source "$(dirname "${BASH_SOURCE[0]}")/helpers/logging.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/../helpers/logging.sh"
 
 # Help section
 print_usage() {
@@ -26,10 +26,20 @@ print_usage() {
   echo
 }
 
-# TODO
 # Word count funcion
-word-count() {
-    echo "This is where we would count everything in ${TARGET_FILE}."
+word_count() {
+    if [[ -z "$TARGET_FILE" ]]; then
+      log ERROR "Missing required file argument."
+      print_usage
+      exit1
+    fi
+
+    if [[ ! -r "$TARGET_FILE" ]]; then
+      log ERROR "Provided file '$TARGET_FILE' does not exist or is not readable."
+      exit 1
+    else
+      wc -l "$TARGET_FILE"
+    fi
 }
 
 # Collect user provided arguments and validate
@@ -56,3 +66,5 @@ while [[ $# -gt 0 ]]; do
       ;;
   esac
 done
+
+word_count "$TARGET_FILE"
