@@ -6,12 +6,20 @@ This folder contains script [word-count.sh](./word-count.sh) that accepts file n
 
 ## Usage
 ```bash
-./word-count.sh [-h] <path to file>
+./word-count.sh [-h|--help] [-v|--version] <path to file>
 ```
+
 ## Examples
+```bash
+$ ./word-count.sh ~/grula
+File: /home/miro/grula
+  Lines      : 112
+  Words      : 2666
+  Characters : 16241
+```
 
 ## Known limitations
-
+N/A
 
 ## Contact me
 - Open an issue at this repository
