@@ -28,18 +28,12 @@ print_usage() {
 
 # Word count funcion
 word_count() {
-    if [[ -z "$TARGET_FILE" ]]; then
-      log ERROR "Missing required file argument."
-      print_usage
-      exit1
-    fi
-
-    if [[ ! -r "$TARGET_FILE" ]]; then
-      log ERROR "Provided file '$TARGET_FILE' does not exist or is not readable."
-      exit 1
-    else
-      wc -l "$TARGET_FILE"
-    fi
+  local file="$1"
+  read -r lines words chars _ < <(wc "$file")
+  echo "File: $file"
+  echo "  Lines      : $lines"
+  echo "  Words      : $words"
+  echo "  Characters : $chars"
 }
 
 # Collect user provided arguments and validate
@@ -47,6 +41,10 @@ while [[ $# -gt 0 ]]; do
   case "$1" in
     -h|--help)
       print_usage
+      exit 0
+      ;;
+    -v|--version)
+      echo "$SCRIPT_VERSION"
       exit 0
       ;;
     -*)
@@ -66,5 +64,16 @@ while [[ $# -gt 0 ]]; do
       ;;
   esac
 done
+
+if [[ -z "$TARGET_FILE" ]]; then
+  log ERROR "Missing required file argument."
+  print_usage
+  exit 1
+fi
+
+if [[ ! -r "$TARGET_FILE" ]]; then
+  log ERROR "Provided file '$TARGET_FILE' does not exist or is not readable."
+  exit 1
+fi
 
 word_count "$TARGET_FILE"
