@@ -5,7 +5,7 @@ set -euo pipefail
 SCRIPT_VERSION="1.0"
 SCRIPT_DIR=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
 LOG_DIR="$SCRIPT_DIR/../logs"
-LOG_FILE="$LOG_DIR/$(date +%Y%m%d-%H%M_log-processor.log)"
+LOG_FILE="$LOG_DIR/$(date +%Y%m%d-%H%M_syscheck.log)"
 
 # Ensure we have log directory present
 mkdir -p "$LOG_DIR"
