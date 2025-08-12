@@ -12,7 +12,7 @@ TARGET_FILE=""
 mkdir -p "$LOG_DIR"
 
 # Load helper scripts
-source "$(dirname "${BASH_SOURCE[0]}")/../helpers/logging.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/../logging.sh"
 
 # Help section
 print_usage() {

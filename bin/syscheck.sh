@@ -11,7 +11,7 @@ LOG_FILE="$LOG_DIR/$(date +%Y%m%d-%H%M_syscheck.log)"
 mkdir -p "$LOG_DIR"
 
 # Load helper scripts
-source "$(dirname "${BASH_SOURCE[0]}")/../../../helpers/logging.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/../lib/logging.sh"
 
 # Help section
 print_usage() {
