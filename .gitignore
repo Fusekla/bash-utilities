@@ -1,1 +1,3 @@
-logs/
+# ignore all logs anywhere
+*.log
+*_log-processor.log
