@@ -1,6 +1,6 @@
 # Bash Utilities
 
-A collection of small Bash scripts created as part of my **2025 yearly roadmap** to refresh core shell skills and build a personal toolkit.  
+A collection of small Bash scripts created to refresh core shell skills and build a personal toolkit.  
 Each script is written with portability and reusability in mind, and grouped in a clean folder structure for long-term maintainability.
 
 ## 📂 Repository Layout
