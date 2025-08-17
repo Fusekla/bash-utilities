@@ -37,11 +37,15 @@ docs/       # Notes, learning logs, design ideas
 | `word-count.sh`   | Counts words in a file                                 |
 | `folder-cleanup.sh`  | Deletes old files in specified folder                 |
 | `log-processor.sh`| Processes log files with custom rules                  |
+| `topN.sh`          | Prints out the most common words in file               |
 
 ## 📝 Development Notes
 - Scripts are POSIX-ish but may use GNU extensions for convenience.
 - Common functions are stored in `lib/logging.sh` and sourced where needed.
 - Logs and temporary files are excluded via `.gitignore`.
+
+## Usage
+- [topN.sh](./docs/usage/topN.md)
 
 ## 📅 Progress Log (Optional)
 See [`docs/progress.md`](docs/progress.md) for development notes and lessons learned.
