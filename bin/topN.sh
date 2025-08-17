@@ -2,11 +2,13 @@
 
 set -euo pipefail
 
+export LC_ALL=C
+
 SCRIPT_VERSION="1.0"
 SCRIPT_DIR=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
 LOG_DIR="$SCRIPT_DIR/../logs"
 LOG_FILE="$LOG_DIR/$(date +%Y%m%d-%H%M_topN.log)"
-TARGET_FILE="test.txt"
+TARGET_FILE="$SCRIPT_DIR/../examples/sample.txt"
 TOPN_WORDS="10" # 10 by default
 
 mkdir -p $LOG_DIR
@@ -51,16 +53,22 @@ while [[ $# -gt 0 ]]; do
       exit 0
       ;;
     -n|--number)
-      TOPN_WORDS=$1
-      shift
+      if [[ -n "$2" ]] && [[ $2 =~ ^[0-9]+$ && "$2" -gt 0 ]]; then
+        TOPN_WORDS=$2
+      else
+        echo "Word count must be numeric value greater than 0; aborting."
+        print_usage
+        exit 2
+      fi
+      shift 2
       ;;
     *)
-      if [[ -f "$TARGET_FILE" ]]; then
+      if [[ -f "$1" ]]; then
         TARGET_FILE="$1"
       else
-        log ERROR "Only one file argument is allowed."
+        echo "Provided file '"$1"' does not exist; aborting."
         print_usage
-        exit 1
+        exit 2
       fi
       shift
       ;;

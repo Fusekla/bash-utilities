@@ -1,1 +1,1 @@
-1. Script [topN.sh](../bin/topN.sh) does not correctly accept `-n` parameter
+1. Script [topN.sh](../bin/topN.sh) fails with dumb error when `-n` is issued but no further arguement provided
