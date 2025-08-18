@@ -38,6 +38,7 @@ docs/       # Notes, learning logs, design ideas
 | `folder-cleanup.sh`  | Deletes old files in specified folder                 |
 | `log-processor.sh`| Processes log files with custom rules                  |
 | `topN.sh`          | Prints out the most common words in file               |
+| `pods-by-ns.sh`   | Prints pods count grouped by namespace                 |
 
 ## 📝 Development Notes
 - Scripts are POSIX-ish but may use GNU extensions for convenience.
@@ -46,6 +47,7 @@ docs/       # Notes, learning logs, design ideas
 
 ## Usage
 - [topN.sh](./docs/usage/topN.md)
+- [pods-by-ns.sh](./docs/usage/pods-by-ns.md)
 
 ## 📅 Progress Log (Optional)
 See [`docs/progress.md`](docs/progress.md) for development notes and lessons learned.
