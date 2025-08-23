@@ -5,9 +5,11 @@ set -euo pipefail
 export LC_ALL=C
 
 readonly SCRIPT_VERSION="1.1"
-readonly SCRIPT_DIR=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+SCRIPT_DIR=$(dirname -- "$(readlink -f -- "${BASH_SOURCE[0]}")")
+readonly SCRIPT_DIR
 readonly LOG_DIR="$SCRIPT_DIR/../logs"
-readonly LOG_FILE="$LOG_DIR/$(date +%Y%m%d-%H%M_pods-by-ns.log)"
+LOG_FILE="$LOG_DIR/$(date +%Y%m%d-%H%M_pods-by-ns.log)"
+readonly LOG_FILE
 
 mkdir -p "$LOG_DIR"
 
